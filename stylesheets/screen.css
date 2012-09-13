@@ -1,0 +1,374 @@
+/* line 17, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 22, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 28, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 30, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 103, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+/* line 32, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+/* line 1, ../sass/modal.sass */
+.modal {
+  /* Overlay page contents */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  /* Transition opacity on open */
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+  /* Hide for now */
+  opacity: 0;
+  pointer-events: none; }
+  /* line 19, ../sass/modal.sass */
+  .modal:target {
+    opacity: 1;
+    pointer-events: auto;
+    /* at time of writing (Feb 2012), pointer-events not supported by Opera or IE */ }
+    /* line 23, ../sass/modal.sass */
+    .modal:target > div {
+      -webkit-animation-name: bounce;
+      -moz-animation-name: bounce; }
+  /* line 26, ../sass/modal.sass */
+  .modal > div {
+    width: 500px;
+    background: white;
+    position: relative;
+    margin: 10% auto;
+    /* Default minimise animation */
+    -webkit-animation: minimise 500ms linear;
+    -moz-animation: minimise 500ms linear;
+    /* Prettify */
+    padding: 30px;
+    border-radius: 7px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+    background: white;
+    background: -moz-linear-gradient(white, #cccccc);
+    background: -webkit-linear-gradient(white, #cccccc);
+    background: -o-linear-gradient(white, #cccccc);
+    text-shadow: 0 1px 0 white; }
+  /* line 45, ../sass/modal.sass */
+  .modal h2 {
+    font-size: 36px;
+    padding: 0 0 20px; }
+  /* line 48, ../sass/modal.sass */
+  .modal a[href="#close"] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: transparent; }
+    /* line 53, ../sass/modal.sass */
+    .modal a[href="#close"]:focus {
+      outline: none; }
+    /* line 55, ../sass/modal.sass */
+    .modal a[href="#close"]:after {
+      content: "X";
+      display: block;
+      /* Position */
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      width: 1.5em;
+      padding: 1px 1px 1px 2px;
+      /* Style */
+      text-decoration: none;
+      text-shadow: none;
+      text-align: center;
+      font-weight: bold;
+      background: black;
+      color: white;
+      border: 3px solid white;
+      border-radius: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+    /* line 74, ../sass/modal.sass */
+    .modal a[href="#close"]:focus:after, .modal a[href="#close"]:hover:after {
+      -webkit-transform: scale(1.1, 1.1);
+      -moz-transform: scale(1.1, 1.1); }
+    /* line 77, ../sass/modal.sass */
+    .modal a[href="#close"]:focus:after {
+      outline: 1px solid black; }
+
+/* Show modal */
+/* Content */
+/* Override animation on modal open */
+@-webkit-keyframes bounce {
+  /* line 87, ../sass/modal.sass */
+  0% {
+    -webkit-transform: scale3d(0.1, 0.1, 1);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }
+
+  /* line 90, ../sass/modal.sass */
+  55% {
+    -webkit-transform: scale3d(1.08, 1.08, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0); }
+
+  /* line 93, ../sass/modal.sass */
+  75% {
+    -webkit-transform: scale3d(0.95, 0.95, 1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); }
+
+  /* line 96, ../sass/modal.sass */
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); } }
+
+@-webkit-keyframes minimise {
+  /* line 102, ../sass/modal.sass */
+  0% {
+    -webkit-transform: scale3d(1, 1, 1); }
+
+  /* line 104, ../sass/modal.sass */
+  100% {
+    -webkit-transform: scale3d(0.1, 0.1, 1); } }
+
+@-moz-keyframes bounce {
+  /* line 109, ../sass/modal.sass */
+  0% {
+    -moz-transform: scale3d(0.1, 0.1, 1);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }
+
+  /* line 112, ../sass/modal.sass */
+  55% {
+    -moz-transform: scale3d(1.08, 1.08, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0); }
+
+  /* line 115, ../sass/modal.sass */
+  75% {
+    -moz-transform: scale3d(0.95, 0.95, 1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); }
+
+  /* line 118, ../sass/modal.sass */
+  100% {
+    -moz-transform: scale3d(1, 1, 1);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); } }
+
+@-moz-keyframes minimise {
+  /* line 124, ../sass/modal.sass */
+  0% {
+    -moz-transform: scale3d(1, 1, 1); }
+
+  /* line 126, ../sass/modal.sass */
+  100% {
+    -moz-transform: scale3d(0.1, 0.1, 1); } }
+
+/* line 15, ../sass/screen.sass */
+body {
+  font-family: Lora, Georgia, serif;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.45em;
+  word-spacing: 0.1em;
+  position: relative;
+  background: transparent url(../images/whitesand.png) repeat 0 0 fixed;
+  color: #212121; }
+
+/* line 25, ../sass/screen.sass */
+header {
+  background: rgba(0, 128, 0, 0.9);
+  z-index: 6000;
+  position: fixed;
+  padding: 10px;
+  color: white;
+  width: 100%; }
+  /* line 31, ../sass/screen.sass */
+  header h1 {
+    text-shadow: 1px 1px 0 black;
+    text-align: center;
+    font-weight: 700;
+    font-family: "Istok Web", "Helvetica Neue", Arial, sans-serif; }
+
+/* line 38, ../sass/screen.sass */
+section {
+  width: 700px;
+  margin: 0 auto;
+  padding-top: 60px;
+  position: relative; }
+  /* line 43, ../sass/screen.sass */
+  section article {
+    padding: 30px 0;
+    border-bottom: 1px dotted #cccccc;
+    min-height: 120px; }
+    /* line 47, ../sass/screen.sass */
+    section article img {
+      max-height: 77px !important;
+      margin: 4px 10px 0px 0px !important;
+      padding: 2px;
+      border: 1px solid #cccccc; }
+    /* line 52, ../sass/screen.sass */
+    section article a.read-more {
+      font-family: "Istok Web", "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+      background: black;
+      color: white;
+      border-radius: 4px;
+      line-height: 1;
+      padding: 2px 6px 2px 6px; }
+      /* line 62, ../sass/screen.sass */
+      section article a.read-more:hover {
+        background: rgba(0, 128, 0, 0.9); }
+    /* line 64, ../sass/screen.sass */
+    section article .truncate {
+      margin-bottom: 20px; }
+      /* line 66, ../sass/screen.sass */
+      section article .truncate a {
+        color: #212121; }
+        /* line 68, ../sass/screen.sass */
+        section article .truncate a:hover {
+          color: rgba(0, 128, 0, 0.9); }
+    /* line 71, ../sass/screen.sass */
+    section article header {
+      width: auto;
+      z-index: 5000;
+      padding: 0;
+      position: relative;
+      background: none;
+      margin-bottom: 15px;
+      text-align: left; }
+      /* line 79, ../sass/screen.sass */
+      section article header pre {
+        position: absolute;
+        top: 25px;
+        left: -100px;
+        margin-bottom: 7px;
+        font-size: 11px;
+        background: transparent url(../images/favicons.png) no-repeat 0 0;
+        padding-left: 19px;
+        font-weight: 700;
+        line-height: 16px; }
+        /* line 83, ../sass/screen.sass */
+        section article header pre a {
+          text-decoration: none;
+          color: #212121; }
+          /* line 86, ../sass/screen.sass */
+          section article header pre a:hover {
+            text-decoration: underline; }
+        /* line 94, ../sass/screen.sass */
+        section article header pre.kicker {
+          background-position: 0 -128px; }
+        /* line 96, ../sass/screen.sass */
+        section article header pre.express {
+          background-position: 0 -16px; }
+        /* line 98, ../sass/screen.sass */
+        section article header pre.borussia {
+          background-position: 0 0; }
+        /* line 100, ../sass/screen.sass */
+        section article header pre.torfabrik {
+          background-position: 0 -96px; }
+        /* line 102, ../sass/screen.sass */
+        section article header pre.freunde11 {
+          background-position: 0 -32px; }
+        /* line 104, ../sass/screen.sass */
+        section article header pre.seitenwahl {
+          background-position: 0 -80px; }
+        /* line 106, ../sass/screen.sass */
+        section article header pre.wz-newsline {
+          background-position: 0 -112px; }
+        /* line 108, ../sass/screen.sass */
+        section article header pre.rp-online {
+          background-position: 0 -48px; }
+        /* line 110, ../sass/screen.sass */
+        section article header pre.aachener-zeitung {
+          background-position: 0 -64px; }
+      /* line 113, ../sass/screen.sass */
+      section article header span {
+        font-family: "Istok Web", "Helvetica Neue", Arial, sans-serif;
+        position: absolute;
+        top: 6px;
+        left: -100px;
+        font-size: 9px;
+        text-transform: uppercase;
+        display: block;
+        font-weight: 700;
+        background: rgba(0, 128, 0, 0.9);
+        color: white;
+        border-radius: 4px;
+        line-height: 1;
+        padding: 4px 6px 2px 6px;
+        text-shadow: none; }
+      /* line 128, ../sass/screen.sass */
+      section article header img {
+        height: auto; }
+      /* line 130, ../sass/screen.sass */
+      section article header h1 {
+        font-family: "Istok Web", "Helvetica Neue", Arial, sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 33px;
+        text-align: left;
+        text-shadow: none; }
+        /* line 137, ../sass/screen.sass */
+        section article header h1 a {
+          color: rgba(0, 128, 0, 0.9);
+          text-decoration: none; }
+          /* line 140, ../sass/screen.sass */
+          section article header h1 a:hover {
+            color: #212121;
+            text-decoration: none; }
+          /* line 143, ../sass/screen.sass */
+          section article header h1 a:visited {
+            text-decoration: line-through; }
+
+/* line 148, ../sass/screen.sass */
+article.rp-online div.truncate img {
+  display: none; }
+/* line 150, ../sass/screen.sass */
+article.rp-online div.truncate br {
+  display: none; }
+
+/* line 153, ../sass/screen.sass */
+.modal {
+  /* Overlay page contents */
+  font-family: "Istok Web", "Helvetica Neue", Arial, sans-serif; }

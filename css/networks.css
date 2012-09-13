@@ -1,0 +1,39 @@
+
+/* SOCIAL NETWORKS */
+/* Images/Classes are named based on 
+   the associative array keys in config.php */
+   
+.instagram .footer, .instagram .header {
+  color: white;
+  background-color: #a97e5e;
+}
+
+.github .footer, .github .header {
+  color: white;
+  background-color: #666;
+}
+
+.google-plus .footer, .google-plus .header {
+	color: white;
+	background-color: #333;
+}
+
+.pinterest .footer, .pinterest .header {
+  color: white;
+  background-color: #E83C42;
+}
+
+.twitter .footer, .twitter .header {
+  color: white;
+  background-color: #86C2DB;
+}
+
+.stackoverflow .footer, .stackoverflow .header {
+  color: white;
+  background-color: #FE7A15;
+}
+
+.reddit .footer, .reddit .header{
+  color: white;
+  background-color: #FF4500;
+}

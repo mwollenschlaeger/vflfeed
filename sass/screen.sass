@@ -1,0 +1,155 @@
+@import "compass/reset"
+@import "modal.sass"
+
+
+=lora
+  font-family: Lora, Georgia, serif
+
+=istok
+  font-family: 'Istok Web', 'Helvetica Neue', Arial, sans-serif
+
+$dark: #212121
+$green: rgba(green, .9)
+$grey: grey
+
+body
+  +lora
+  font-weight: 400
+  font-size: 1em
+  line-height: 1.45em
+  word-spacing: .1em
+  position: relative
+  background: transparent url(../images/whitesand.png) repeat 0 0 fixed
+  color: #212121
+
+header
+  background: $green
+  z-index: 6000
+  position: fixed
+  padding: 10px
+  color: white
+  h1
+    text-shadow: 1px 1px 0 black
+    text-align: center
+    font-weight: 700
+    +istok
+  width: 100%
+
+section
+  width: 700px
+  margin: 0 auto
+  padding-top: 60px
+  position: relative
+  article
+    padding: 30px 0
+    border-bottom: 1px dotted #ccc
+    min-height: 120px
+    img 
+      max-height: 77px !important
+      margin: 4px 10px 0px 0px !important
+      padding: 2px
+      border: 1px solid #ccc
+    a.read-more
+      +istok
+      font-size: 12px
+      text-transform: uppercase
+      font-weight: 700
+      background: black
+      color: white
+      border-radius: 4px
+      line-height: 1
+      padding: 2px 6px 2px 6px
+      &:hover
+        background: $green
+    .truncate
+      margin-bottom: 20px
+      a
+        color: #212121
+        &:hover
+          color: $green
+
+    header
+      width: auto
+      z-index: 5000
+      padding: 0
+      position: relative
+      background: none
+      margin-bottom: 15px
+      text-align: left
+      pre
+        position: absolute
+        top: 25px
+        left: -100px
+        a
+          text-decoration: none
+          color: #212121
+          &:hover
+            text-decoration: underline
+        margin-bottom: 7px
+        font-size: 11px
+        background: transparent url(../images/favicons.png) no-repeat 0 0
+        padding-left: 19px
+        font-weight: 700
+        line-height: 16px
+        &.kicker
+          background-position: 0 -128px
+        &.express
+          background-position: 0 -16px
+        &.borussia
+          background-position: 0 0
+        &.torfabrik
+          background-position: 0 -96px
+        &.freunde11
+          background-position: 0 -32px
+        &.seitenwahl
+          background-position: 0 -80px
+        &.wz-newsline
+          background-position: 0 -112px
+        &.rp-online
+          background-position: 0 -48px
+        &.aachener-zeitung
+          background-position: 0 -64px
+
+      span
+        +istok
+        position: absolute
+        top: 6px
+        left: -100px
+        font-size: 9px
+        text-transform: uppercase
+        display: block
+        font-weight: 700
+        background: $green
+        color: white
+        border-radius: 4px
+        line-height: 1
+        padding: 4px 6px 2px 6px
+        text-shadow: none
+      img
+        height: auto
+      h1
+        +istok
+        font-size: 30px
+        font-weight: 400
+        line-height: 33px
+        text-align: left
+        text-shadow: none
+        a
+          color: $green
+          text-decoration: none
+          &:hover
+            color: #212121
+            text-decoration: none
+          &:visited
+            text-decoration: line-through
+          
+article.rp-online
+  div.truncate
+    img
+      display: none
+    br
+      display: none
+
+.modal
+  /* Overlay page contents
+  +istok

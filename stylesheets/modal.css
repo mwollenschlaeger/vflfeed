@@ -1,0 +1,174 @@
+/* Container */
+/* line 3, ../sass/modal.sass */
+.modal {
+  /* Overlay page contents */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  /* Transition opacity on open */
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+  /* Hide for now */
+  opacity: 0;
+  pointer-events: none; }
+  /* line 19, ../sass/modal.sass */
+  .modal:target {
+    opacity: 1;
+    pointer-events: auto;
+    /* at time of writing (Feb 2012), pointer-events not supported by Opera or IE */ }
+    /* line 23, ../sass/modal.sass */
+    .modal:target > div {
+      -webkit-animation-name: bounce;
+      -moz-animation-name: bounce; }
+  /* line 26, ../sass/modal.sass */
+  .modal > div {
+    width: 500px;
+    background: white;
+    position: relative;
+    margin: 10% auto;
+    /* Default minimise animation */
+    -webkit-animation: minimise 500ms linear;
+    -moz-animation: minimise 500ms linear;
+    /* Prettify */
+    padding: 30px;
+    border-radius: 7px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+    background: white;
+    background: -moz-linear-gradient(white, #cccccc);
+    background: -webkit-linear-gradient(white, #cccccc);
+    background: -o-linear-gradient(white, #cccccc);
+    text-shadow: 0 1px 0 white; }
+  /* line 43, ../sass/modal.sass */
+  .modal h2 {
+    font-size: 36px;
+    padding: 0 0 20px; }
+  /* line 46, ../sass/modal.sass */
+  .modal a[href="#close"] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: transparent; }
+    /* line 51, ../sass/modal.sass */
+    .modal a[href="#close"]:focus {
+      outline: none; }
+    /* line 53, ../sass/modal.sass */
+    .modal a[href="#close"]:after {
+      content: "X";
+      display: block;
+      /* Position */
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      width: 1.5em;
+      padding: 1px 1px 1px 2px;
+      /* Style */
+      text-decoration: none;
+      text-shadow: none;
+      text-align: center;
+      font-weight: bold;
+      background: black;
+      color: white;
+      border: 3px solid white;
+      border-radius: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+    /* line 72, ../sass/modal.sass */
+    .modal a[href="#close"]:focus:after, .modal a[href="#close"]:hover:after {
+      -webkit-transform: scale(1.1, 1.1);
+      -moz-transform: scale(1.1, 1.1); }
+    /* line 75, ../sass/modal.sass */
+    .modal a[href="#close"]:focus:after {
+      outline: 1px solid black; }
+
+/* Show modal */
+/* Content */
+/* Override animation on modal open */
+@-webkit-keyframes bounce {
+  /* line 85, ../sass/modal.sass */
+  0% {
+    -webkit-transform: scale3d(0.1, 0.1, 1);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }
+
+  /* line 88, ../sass/modal.sass */
+  55% {
+    -webkit-transform: scale3d(1.08, 1.08, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0); }
+
+  /* line 91, ../sass/modal.sass */
+  75% {
+    -webkit-transform: scale3d(0.95, 0.95, 1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); }
+
+  /* line 94, ../sass/modal.sass */
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); } }
+
+@-webkit-keyframes minimise {
+  /* line 100, ../sass/modal.sass */
+  0% {
+    -webkit-transform: scale3d(1, 1, 1); }
+
+  /* line 102, ../sass/modal.sass */
+  100% {
+    -webkit-transform: scale3d(0.1, 0.1, 1); } }
+
+@-moz-keyframes bounce {
+  /* line 107, ../sass/modal.sass */
+  0% {
+    -moz-transform: scale3d(0.1, 0.1, 1);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); }
+
+  /* line 110, ../sass/modal.sass */
+  55% {
+    -moz-transform: scale3d(1.08, 1.08, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0); }
+
+  /* line 113, ../sass/modal.sass */
+  75% {
+    -moz-transform: scale3d(0.95, 0.95, 1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); }
+
+  /* line 116, ../sass/modal.sass */
+  100% {
+    -moz-transform: scale3d(1, 1, 1);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.9); } }
+
+@-moz-keyframes minimise {
+  /* line 122, ../sass/modal.sass */
+  0% {
+    -moz-transform: scale3d(1, 1, 1); }
+
+  /* line 124, ../sass/modal.sass */
+  100% {
+    -moz-transform: scale3d(0.1, 0.1, 1); } }
+
+/* Modal close link */
+/* Reset native styles */
+/* Create close button */
+/* Open modal */
+/* line 136, ../sass/modal.sass */
+a.openModal {
+  margin: 1em auto;
+  display: block;
+  width: 200px;
+  background: #cccccc;
+  text-align: center;
+  padding: 10px;
+  border-radius: 7px;
+  background: white;
+  background: -moz-linear-gradient(white, #dddddd);
+  background: -webkit-linear-gradient(white, #dddddd);
+  background: -o-linear-gradient(white, #dddddd);
+  text-shadow: 0 1px 0 white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
+  /* line 151, ../sass/modal.sass */
+  a.openModal:hover, a.openModal:focus {
+    background: -moz-linear-gradient(white, #cccccc);
+    background: -webkit-linear-gradient(white, #cccccc);
+    background: -o-linear-gradient(white, #cccccc); }
